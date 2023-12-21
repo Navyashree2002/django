@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="content container-fluid">
+    <div class="page-header">
+       <div class="row align-items-center">
+          <div class="col">
+             <h3 class="page-title">View Result</h3>
+             <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                <li class="breadcrumb-item active">Result</li>
+             </ul>
+          </div>
+          
+          <div class="col-auto text-right float-right ml-auto">
+            
+          </div>
+       </div>
+    </div>
+    {% include "messages.html" %}
+    <div class="row">
+       <div class="col-sm-12">
+          <div class="card card-table">
+             <div class="card-body">
+                <div class="table-responsive">
+                   <table id="table_id" class="table table-hover table-center mb-0 ">
+                      <thead>
+                         <tr>
+                            <th>ID</th>
+                            <th>Subject_Name</th>
+                            <th>MSE1</th>
+                            <th>MSE2</th>
+                            <th>TASK</th>
+                            <th>CIE</th>
+                            <th>SEE</th>
+                            <th>TOTAL</th>
+                                                        
+
+                            <th class="text-right">Status</th>
+                         </tr>
+                      </thead>
+                      <tbody>
+                        {% for i in result  %}
+                         <tr>
+                            <td>{{i.id}}</td>
+
+                 
+                            <td>{{i.subject_id.name}}</td>
+                            <td>{{i.mse1}}</td>
+                            <td>{{i.mse2}}</td>
+                            
+                            <td>{{i.tasks}}</td>
+                            <td>{{i.cie}}</td>
+                            <td>{{i.see_marks}}</td>
+                            <td>{{i.total}}</td>
+                            <td class="text-right">
+                               {% if total < 30 %}
+                               <span  class="badge badge-danger">fail</span>
+                               {% else %}
+                               <span class="badge badge-success">pass</span>
+
+                               
+                               {% endif %}
+                
+
+                            </td>
+                         </tr>
+                         {% endfor %}
+                         
+                      </tbody>
+                   </table>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+
+{% endblock content %}
+

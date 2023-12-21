@@ -31,6 +31,8 @@
                      <div class="login-right-wrap">
                         <h1>Login</h1>
                         <p class="account-subtitle">Access to our dashboard</p>
+                        {% include "messages.html" %}
+{% comment %}                         
                         {% if messages %}
                            {% for message in messages  %}
                               {% if message.tags == 'error' %}
@@ -42,7 +44,7 @@
                          </div>
                               {% endif %}
                            {% endfor %}
-                         {% endif %}
+                         {% endif %} {% endcomment %}
                         <form action="{% url "doLogin" %}" method="POST">
                             {% csrf_token %}
                            <div class="form-group">

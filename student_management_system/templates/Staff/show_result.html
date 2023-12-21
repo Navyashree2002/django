@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+    <div class="content container-fluid">
+    
+    <div class="page-header">
+    <div class="row align-items-center">
+    <div class="col">
+    <h3 class="page-title">Add Result</h3>
+    <ul class="breadcrumb">
+    <li class="breadcrumb-item"><a href="subjects.html">Dashboard</a></li>
+    <li class="breadcrumb-item active">Add Result</li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    
+    {% include "messages.html" %}
+
+        
+                <form action="" method="">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        
+                                <div class="col-12">
+                                    <h5 class="form-title"><span> Result</span></h5>
+                                </div>
+
+
+                                
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Subject</label>
+                                        <input type="text" class="form-control" name="" value={{get_subject}}>
+                                    </div>
+                                    </div>
+                                <div class="col-12 col-sm-6">
+                                
+                            <div class="form-group">
+                        {% comment %} <label>Gender</label> {% endcomment %}
+                                <label>Session Year</label>
+                                    <select class="form-control" name="session_year_id" >
+                                    
+                                
+                                        <option value="{{get_session.id}}">{{get_session}}</option>
+                                    
+                                </select>
+                                </div>
+                                </div>
+                                
+
+
+                                <hr>
+                                        {% comment %} <select class="form-control" name="student_id" >
+                                            {% for i in students %}
+                                                <option value="{{i.admin.id}}">ID{{i.id}}:{{i.admin.first_name}}{{i.admin.last_name}}</option>
+                                            
+                                            {% endfor %}
+                                            
+                                        </select> {% endcomment %}
+                                        
+                                        <div class="col-12 col-sm-6">
+                                            <div class="form-group">
+                                                <label>Student</label>
+                                                <input type="text" class="form-control"  value={{get_student}}>
+                                            </div>
+                                            </div>
+                                        
+{% comment %} 
+                                            <select>
+
+                                            </select> {% endcomment %}
+
+
+                                        <div class="col-12 col-sm-6">
+                                            <div class="form-group">
+                                                <label>MSE 1</label>
+                                                <input type="number" class="form-control" name="mse1" value={{mse1}}>
+                                            </div>
+                                            </div>
+
+                                        <div class="col-12 col-sm-6">
+                                            <div class="form-group">
+                                                <label>MSE2</label>
+                                                <input type="number" class="form-control" name="mse2" value={{mse2}}>
+                                            </div>
+                                            </div>
+
+                                        <div class="col-12 col-sm-6">
+                                            <div class="form-group">
+                                                <label>TASKS</label>
+                                                <input type="number" class="form-control" name="task" value={{task}}>
+                                            </div>
+                                            </div>
+
+                                        <div class="col-12 col-sm-6">
+                                            <div class="form-group">
+                                                <label>CIE</label>
+                                                <input type="number" class="form-control" name="cie" value={{cie}}>
+                                                
+                                            </div>
+                                            </div>
+
+                                        <div class="col-12 col-sm-6">
+                                            <div class="form-group">
+                                                <label>SEE</label>
+                                                <input type="number" class="form-control" name="see" value={{see}}>
+                                                
+                                            </div>
+                                            </div>
+
+                                        <div class="col-12 col-sm-6">
+                                            <div class="form-group">
+                                                <label>TOTAL</label>
+                                                <input type="number" class="form-control" name="total" value={{total}}>
+                                                
+                                            </div>
+                                            </div>
+
+                                            <br>
+                                            <div class="col-12 mr-3">
+                                                <button  class="btn btn-primary"><a href="{% url "add_result" %}">DONE</a></button>
+                                                
+                                                </div>
+                                                </div>
+                                                <hr>
+                                            </div>
+                                            </div>
+                                            </div>
+                                            </div>
+                                        </form>
+
+        
+                                </div>
+
+                                
+
+
+
+
+
+        
+        
+                
+
+    
+
+
+{% endblock content %}
+
+
